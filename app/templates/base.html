@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 
 
-        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo1.png') }}">
         <title>My Music{% block title %}{% endblock %}</title>
 
     {% endblock %}
@@ -35,13 +35,14 @@
 
             <nav class="navbar navbar-default navbar-expand-lg px-3 rounded-3">
                 <a class="navbar-brand ml-5">
-                    <img src="{{ url_for('static', filename='images/favicon.ico') }}" height="60" width="60" alt="">
+                    <img src="{{ url_for('static', filename='images/logo1.png') }}" height="60" width="60" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <div class="navbar-nav mr-auto">
                         {% if current_user.is_authenticated %}
@@ -51,7 +52,15 @@
                         {% endif %}
                         {{ render_nav_item('map.map_locations','Map' ) }}
                         {{ render_nav_item('simple_pages.about','About') }}
+                      <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            IBM Exercises</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('simple_pages.IBM') }}">Form</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('simple_pages.Interest') }}">Interest Rate</a></li>
 
+                        </ul>
                     </div>
                 </div>
                 <div class="navbar-nav d-flex">
@@ -110,7 +119,6 @@
 
 {% block scripts %}
     <!-- Optional JavaScript -->
-    {{ bootstrap.load_js() }}
 
 {% endblock %}
 <footer class="text-center mt-5">

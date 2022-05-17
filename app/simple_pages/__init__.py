@@ -25,3 +25,17 @@ def welcome():
         return render_template('welcome.html')
     except TemplateNotFound:
         abort(404)
+
+@simple_pages.route('/IBM')
+def IBM():
+    try:
+        return render_template('IBM.html')
+    except TemplateNotFound:
+        abort(404)
+
+@simple_pages.route('/Interest')
+def Interest():
+    try:
+        return render_template('Interest.html')
+    except TemplateNotFound:
+        abort(404)
