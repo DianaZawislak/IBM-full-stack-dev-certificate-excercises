@@ -1,6 +1,8 @@
 """A simple flask web app"""
 import os
-from flask import Flask
+from flask import Flask, render_template
+
+from app import IBM_pages
 from app.cli import create_database
 from app.db import db
 from app.db.models import User
@@ -21,6 +23,8 @@ def create_app():
     db.init_app(app)
     # add command function to cli commands
     app.cli.add_command(create_database)
+    app.register_blueprint(IBM_pages)
+
 
     @app.route('/')
     def hello():
