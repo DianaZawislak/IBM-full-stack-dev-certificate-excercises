@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% block content %}
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8">
+    <title>How Far you are from Statue of Liberty</title>
+</head>
+
+<body><div align="center">
+<div class="row">
+<div class="col-6">
+  <div class=col-5 style="font-family:sans-serif;background-color:white;width:500px;border:1px solid">
+
+<!------------------------------------Statue of liberty -------------------------->
+    <h1>How far is Statue of Liberty?</h1>
+
+    <div>
+      <img src="https://www.goodfreephotos.com/cache/united-states/new-york/new-york-city/face-of-the-statue-of-liberty-in-new-york.jpg" width="450px" align="center"><br> <br>
+        <div style="text-align: justify;padding:10px">
+        Using the Geolocation API, we can find out the current location.
+        Using our current location, we can find out how far we are from the Statue of Liberty. See for yourself by clicking on the button below.
+        </div>
+      <br><br>
+    <button onclick="getlocation1()">Compute distance to Statue of Liberty</button>
+    <br>
+    <span id="output"></span>
+    <br>
+    <br>
+    </div>
+
+    <div id="q2" style="display:none;padding:10px">
+    Click on the button below to find out how long it would take you to walk to the Statue of Liberty.
+      <div>
+      <img src="http://www.clipartbest.com/cliparts/7Ta/RgE/7TaRgErbc.gif" width="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Statue-of-liberty.svg/512px-Statue-of-liberty.svg.png" width="150px">
+      </div>
+
+    <button onclick="getElementById('p1').style.display='inline';">Compute time to walk</button>
+
+      <div id="p1" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers per Hour, it would take you<br>
+      	<span style="background-color:yellow;font-:bold" id="days"></span> days<br> to reach Statue of Liberty.<br> By the way, that is if there is a straight road to Statue of Liberty from your location.
+      </div><br><br>
+
+    </div>
+  </div>
+</div>
+
+
+
+ <!---------------------------Statue of liberty script------------------------------->
+
+  <script>
+
+    var output = document.getElementById("output");
+    var kms = 0;
+    var duration = 0;
+    function getlocation1() {
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(howFar)
+          }
+        else
+        {
+             alert("Your browser does not support Geolocation API.")
+         }
+          }
+
+     function howFar(position){
+       var lat1  = position.coords.latitude;
+       var long1 = position.coords.longitude;
+
+       //Coordinates of Statue of Liberty
+
+
+       var lat2  =  40.690400;
+       var long2 = -74.045792;
+       kms = distance(lat1, long1, lat2, long2, 'K');
+       kms = parseFloat(kms).toFixed(2)
+       //alert(kms);
+       duration = parseFloat(kms / 5 / 24).toFixed(2) // days
+       document.getElementById('output').innerHTML = "<br> You are <h3>" + kms +  " Kilometers </h3> away from Statue of Liberty.<br>";
+       document.getElementById('days').innerHTML = "<strong>" + duration + "<strong>";
+       document.getElementById('q2').style.display = "inline";
+     }
+
+     function distance(lat1, lon1, lat2, lon2, unit) {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+		return dist;
+	}
+}</script>
+
+
+ <!-------------------------------------------- Second location Tokyo---------------------------->
+
+<div class="col-6">
+   <div style="font-family:sans-serif;background-color:white;width:500px;border:1px solid">
+    <h1>How far away are you from Tokyo?</h1>
+
+    <div>
+      <img src="https://s3-eu-west-1.amazonaws.com/emap-nibiru-prod/wp-content/uploads/sites/2/2020/01/01001829/tokyocityoverview-1.jpg" width="455px" height="254px" align="center"><br> <br>
+        <div style="text-align: justify;padding:10px">
+        Using the Geolocation API, we can find out the current location.
+        Using our current location, we can find out how far we are from the Tokyo. See for yourself by clicking on the button below.
+        </div>
+      <br><br>
+    <button onclick="getlocation()">Compute distance to Tokyo</button>
+    <br>
+    <span id="output1"></span>
+    <br>
+    <br>
+    </div>
+
+    <div id="p2" style="display:none;padding:10px">
+    Click on the button below to find out how long it would take you to walk to Tokyo.
+      <div>
+      <img src="http://www.clipartbest.com/cliparts/7Ta/RgE/7TaRgErbc.gif" width="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="https://www.bing.com/images/search?view=detailV2&ccid=Z2Uzvibi&id=DD4FD4E550E8016855D160B18D14ABFF1B431B4B&thid=OIP.Z2UzvibiVLSJYOMXJPnMUAHaHa&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.676533be26e254b48960e31724f9cc50%3frik%3dSxtDG%252f%252brFI2xYA%26riu%3dhttp%253a%252f%252fwww.ambiance-sticker.com%252fimages%252fImage%252fcity54-Tokyo-skyline1_1410424620.png%26ehk%3dGq%252fY%252b4inEa9NozJiHOwnIcAZRxpJXx7nyeq4IdUOGME%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=1200&expw=1200&q=tokyo+png&simid=608041179010827177&FORM=IRPRST&ck=BA23B75B5933CD3E3AC99B5A1215A407&selectedIndex=6&ajaxhist=0&ajaxserp=0" width="150px">
+      </div>
+
+    <button onclick="getElementById('p1').style.display='inline';">Compute time to walk</button>
+
+      <div id="p2" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers per Hour, it would take you<br>
+      	<span style="background-color:yellow;font-:bold" id="days"></span> days<br> to reach Statue of Liberty.<br> By the way, that is if there is a straight road to Statue of Liberty from your location.
+      </div><br><br>
+    </div>.
+    </div>
+  </div>
+</div>
+
+   <!--------------------------------Script for Tokyo -------------------------->
+
+ <script>
+    var output1 = document.getElementById("output1");
+    var kms = 0;
+    var duration = 0;
+    function getlocation() {
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(howFar)
+          }
+        else
+        {
+             alert("Your browser does not support Geolocation API.")
+         }
+          }
+
+     function howFar(position){
+       var lat1  = position.coords.latitude;
+       var long1 = position.coords.longitude;
+
+       //Coordinates of Tokyo
+
+
+       var lat2  =  35.652832;
+       var long2 = 139.839478;
+       kms = distance(lat1, long1, lat2, long2, 'K');
+       kms = parseFloat(kms).toFixed(2)
+       //alert(kms);
+       duration = parseFloat(kms / 5 / 24).toFixed(2) // days
+       document.getElementById('output1').innerHTML = "<br> You are <h3>" + kms +  " Kilometers </h3> away from Tokyo.<br>";
+       document.getElementById('days').innerHTML = "<strong>" + duration + "<strong>";
+       document.getElementById('q2').style.display = "inline";
+     }
+
+     function distance(lat1, lon1, lat2, lon2, unit) {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+		return dist;
+	}
+}</script>
+
+{% endblock %}
