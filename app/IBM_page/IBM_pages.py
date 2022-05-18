@@ -1,14 +1,13 @@
 from flask import Blueprint, render_template, abort
 from jinja2 import TemplateNotFound
 
-from app import IBM_pages
 
-simple_pages = Blueprint('IBM_pages', __name__,
+IBM_pages = Blueprint('ibm_pages', __name__,
                         template_folder='templates')
 
 
 @IBM_pages.route('/')
-def index():
+def home():
     try:
         return render_template('index.html')
     except TemplateNotFound:
@@ -27,3 +26,5 @@ def welcome():
         return render_template('interestRate.html')
     except TemplateNotFound:
         abort(404)
+
+
