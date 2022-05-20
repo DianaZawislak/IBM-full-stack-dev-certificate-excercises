@@ -93,3 +93,16 @@ a:hover {
 a {
     color: darkslategrey;
 }
+
+/*.divback {
+    background-color: #909090;
+    border-radius: 1px;
+    border-color: white;
+    border-width: 1px;
+}*/
+
+.btn-primary {
+    background-color: #303030!important;
+    color: #909090!important;
+border-color: #303030!important;
+}
