@@ -17,7 +17,7 @@
                 <div class="col-4">
                     <h1 class="text-center">How far is Statue of Liberty?</h1>
 
-                    <div class="divback">
+                    <div class="location">
                         <img src="https://www.goodfreephotos.com/cache/united-states/new-york/new-york-city/face-of-the-statue-of-liberty-in-new-york.jpg"
                               width="409" height="220px"><br> <br>
                         <div style="text-align: justify;padding:10px">
@@ -62,7 +62,7 @@
 
                         <h1 class="text-center">How far away are you from Tokyo?</h1>
 
-                        <div>
+                        <div class="location">
                             <img src="https://s3-eu-west-1.amazonaws.com/emap-nibiru-prod/wp-content/uploads/sites/2/2020/01/01001829/tokyocityoverview-1.jpg"
                                  width="409" height="220px"><br> <br>
                             <div style="text-align: justify;padding:10px">
@@ -108,7 +108,7 @@
 
                     <h1 class="text-center">How far away are you from Gdansk?</h1>
 
-                    <div>
+                    <div class="location">
                         <img src="http://mytouringdansk.com/wp-content/uploads/2017/04/gdansk-at-night-touringdansk.jpg"
                               width="409" height="220px"><br> <br>
                         <div style="text-align: justify;padding:10px">
@@ -146,7 +146,7 @@
                     .
                 </div>
             </div>
-        </div>
+
 
         <!---------------------------------------------JAVASCRIPTS FOR CALCULATING DISTANCE FROM YOUR LOCATION ------------------------------------------------>
 
@@ -298,7 +298,7 @@
                 kms = distance2(lat5, long5, lat6, long6, 'K');
                 kms = parseFloat(kms).toFixed(2)
                 //alert(kms);
-                duration1 = parseFloat(kms / 5 / 24).toFixed(2) // days
+                duration2 = parseFloat(kms / 5 / 24).toFixed(2) // days
                 document.getElementById('output2').innerHTML = "<br> You are <h3>" + kms + " Kilometers </h3> away from Tokyo.<br>";
                 document.getElementById('days2').innerHTML = "<strong>" + duration2 + "<strong>";
                 document.getElementById('q3').style.display = "inline";
@@ -329,5 +329,5 @@
                     return dist;
                 }
             }</script>
-    </div>
+--------->
 {% endblock %}
