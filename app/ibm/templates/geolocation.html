@@ -33,18 +33,18 @@
                         <br>
                     </div>
 
-                    <div id="q2" style="display:none;padding:10px">
+                    <div class="location" id="q2" style="display:none;">
                         Click on the button below to find out how long it would take you to walk to the Statue of
                         Liberty.
                         <div>
-                            <img src="http://www.clipartbest.com/cliparts/7Ta/RgE/7TaRgErbc.gif" width="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Statue-of-liberty.svg/512px-Statue-of-liberty.svg.png"
-                                 width="150px">
+                            <img  src="{{ url_for('static', filename='images/white-man.gif') }}" width="100px" height="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img  src="{{ url_for('static', filename='images/Statue-Of-Liberty-Line-Art.svg') }}" width="100px" height="100px">
                         </div>
+                        <br>
 
                         <button class="btn-primary" onclick="getElementById('p1').style.display='inline';">Compute time to walk</button>
 
-                        <div id="p1" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers per
+                        <div class="location" id="p1" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers per
                             Hour, it would take you<br>
                             <span style="background-color:yellow;font-:bold" id="days"></span> days<br> to reach Statue
                             of Liberty.<br> By the way, that is if there is a straight road to Statue of Liberty from
@@ -79,17 +79,19 @@
                         </div>
 
 
-                        <div id="q1" style="display:none;padding:10px">
+                        <div class="location" id="q1" style="display:none;">
                             Click on the button below to find out how long it would take you to walk to the Tokyo.
+                        <br>
+                            <br>
                             <div>
-                                <img src="http://www.clipartbest.com/cliparts/7Ta/RgE/7TaRgErbc.gif" width="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="http://www.ambiance-sticker.com/images/Image/city54-Tokyo-skyline1_1410424620.png"
-                                     width="150px" height="200px">
-                            </div>
+                            <img  src="{{ url_for('static', filename='images/white-man.gif') }}" width="100px" height="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img  src="{{ url_for('static', filename='images/Statue-Of-Liberty-Line-Art.svg') }}" width="100px" height="100px">
+                        </div>
+                            <br>
 
                             <button class="btn-primary" onclick="getElementById('p2').style.display='inline';">Compute time to walk</button>
 
-                            <div id="p2" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers
+                            <div class="location" id="p2" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers
                                 per Hour, it would take you<br>
                                 <span style="background-color:yellow;font-:bold" id="days1"></span> days<br> to reach
                                 Statue of Liberty.<br> By the way, that is if there is a straight road to Tokyo from your location.
@@ -113,7 +115,7 @@
                               width="409" height="220px"><br> <br>
                         <div style="text-align: justify;padding:10px">
                             Using the Geolocation API, we can find out the current location.
-                            Using our current location, we can find out how far we are from the Tokyo. See for yourself
+                            Using our current location, we can find out how far we are from the Gdansk. See for yourself
                             by clicking on the button below.
                         </div>
                         <br><br>
@@ -125,25 +127,27 @@
                     </div>
 
 
-                    <div id="q3" style="display:none;padding:10px">
+                    <div class="location" id="q3" style="display:none;">
                         Click on the button below to find out how long it would take you to walk to the Gdansk.
+<br>
+                        <br>
                         <div>
-                            <img src="http://www.clipartbest.com/cliparts/7Ta/RgE/7TaRgErbc.gif" width="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <img src="http://www.ambiance-sticker.com/images/Image/city54-Tokyo-skyline1_1410424620.png"
-                                 width="150px" height="200px">
+                            <img  src="{{ url_for('static', filename='images/white-man.gif') }}" width="100px" height="100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img  src="{{ url_for('static', filename='images/Statue-Of-Liberty-Line-Art.svg') }}" width="100px" height="100px">
                         </div>
+                        <br>
 
                         <button class="btn-primary" onclick="getElementById('p3').style.display='inline';">Compute time to walk</button>
 
-                        <div id="p3" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers per
+                        <div class="location" id="p3" style="display:none;padding:10px"><br><br>Walking at a speed of 5 Kilometers per
                             Hour, it would take you<br>
                             <span style="background-color:yellow;font-:bold" id="days2"></span> days<br> to reach Statue
-                            of Liberty.<br> By the way, that is if there is a straight road to Gdansk from
+                            .<br> By the way, that is if there is a straight road to Gdansk from
                             your location.
                         </div>
                         <br><br>
                     </div>
-                    .
+
                 </div>
             </div>
 
@@ -174,8 +178,8 @@
                 //Coordinates of Statue of Liberty
 
 
-                var lat2 = 54.35227;
-                var long2 = 18.64912;
+                var lat2 = 40.689247;
+                var long2 = -74.044502;
 
 
                 kms = distance(lat1, long1, lat2, long2, 'K');
@@ -234,9 +238,9 @@
 
                 //Coordinates of Tokyo
 
-
                 var lat3 = 35.652832;
                 var long3 = 139.839478;
+
                 kms = distance1(lat4, long4, lat3, long3, 'K');
                 kms = parseFloat(kms).toFixed(2)
                 //alert(kms);
@@ -290,11 +294,11 @@
                 var lat5 = position.coords.latitude;
                 var long5 = position.coords.longitude;
 
-                //Coordinates of Tokyo
+                //Coordinates of Gdansk  ----- CHANGE VALUES!!!!!
 
+                var lat6 = 54.372158;
+                var long6 = 18.638306;
 
-                var lat6 = 35.652832;
-                var long6 = 139.839478;
                 kms = distance2(lat5, long5, lat6, long6, 'K');
                 kms = parseFloat(kms).toFixed(2)
                 //alert(kms);
@@ -329,5 +333,5 @@
                     return dist;
                 }
             }</script>
---------->
+
 {% endblock %}
