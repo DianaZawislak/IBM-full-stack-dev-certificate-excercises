@@ -34,3 +34,9 @@ def geolocation():
     except TemplateNotFound:
         abort(404)
 
+@ibm.route('/cities')
+def cities():
+    try:
+        return render_template('cities.html')
+    except TemplateNotFound:
+        abort(404)

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+
+<script>
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://andruxnet-world-cities-v1.p.rapidapi.com/?query=paris&searchby=city",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Host": "andruxnet-world-cities-v1.p.rapidapi.com",
+		"X-RapidAPI-Key": "95922dad6fmsh2052b03db6f8f69p1bca7djsna04fcd352f5f"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+</script>
+</body>
+{% endblock %}
